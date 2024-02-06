@@ -1,0 +1,498 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1FE672F12B72A27C007E9239 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 1FE672F02B72A27C007E9239 /* RealityKitContent */; };
+		1FE672F32B72A27C007E9239 /* GeometryLinkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE672F22B72A27C007E9239 /* GeometryLinkApp.swift */; };
+		1FE672F52B72A27C007E9239 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE672F42B72A27C007E9239 /* ContentView.swift */; };
+		1FE672F72B72A27C007E9239 /* ImmersiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE672F62B72A27C007E9239 /* ImmersiveView.swift */; };
+		1FE672F92B72A27D007E9239 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FE672F82B72A27D007E9239 /* Assets.xcassets */; };
+		1FE672FC2B72A27D007E9239 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FE672FB2B72A27D007E9239 /* Preview Assets.xcassets */; };
+		1FE673072B72A27E007E9239 /* GeometryLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE673062B72A27E007E9239 /* GeometryLinkTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1FE673032B72A27E007E9239 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1FE672E32B72A27C007E9239 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1FE672EA2B72A27C007E9239;
+			remoteInfo = GeometryLink;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1FE672EB2B72A27C007E9239 /* GeometryLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeometryLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FE672EF2B72A27C007E9239 /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
+		1FE672F22B72A27C007E9239 /* GeometryLinkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryLinkApp.swift; sourceTree = "<group>"; };
+		1FE672F42B72A27C007E9239 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1FE672F62B72A27C007E9239 /* ImmersiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmersiveView.swift; sourceTree = "<group>"; };
+		1FE672F82B72A27D007E9239 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1FE672FB2B72A27D007E9239 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1FE672FD2B72A27D007E9239 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FE673022B72A27E007E9239 /* GeometryLinkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeometryLinkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FE673062B72A27E007E9239 /* GeometryLinkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryLinkTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1FE672E82B72A27C007E9239 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FE672F12B72A27C007E9239 /* RealityKitContent in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FE672FF2B72A27E007E9239 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1FE672E22B72A27C007E9239 = {
+			isa = PBXGroup;
+			children = (
+				1FE672ED2B72A27C007E9239 /* GeometryLink */,
+				1FE672EE2B72A27C007E9239 /* Packages */,
+				1FE673052B72A27E007E9239 /* GeometryLinkTests */,
+				1FE672EC2B72A27C007E9239 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1FE672EC2B72A27C007E9239 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1FE672EB2B72A27C007E9239 /* GeometryLink.app */,
+				1FE673022B72A27E007E9239 /* GeometryLinkTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1FE672ED2B72A27C007E9239 /* GeometryLink */ = {
+			isa = PBXGroup;
+			children = (
+				1FE672F22B72A27C007E9239 /* GeometryLinkApp.swift */,
+				1FE672F42B72A27C007E9239 /* ContentView.swift */,
+				1FE672F62B72A27C007E9239 /* ImmersiveView.swift */,
+				1FE672F82B72A27D007E9239 /* Assets.xcassets */,
+				1FE672FD2B72A27D007E9239 /* Info.plist */,
+				1FE672FA2B72A27D007E9239 /* Preview Content */,
+			);
+			path = GeometryLink;
+			sourceTree = "<group>";
+		};
+		1FE672EE2B72A27C007E9239 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				1FE672EF2B72A27C007E9239 /* RealityKitContent */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		1FE672FA2B72A27D007E9239 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				1FE672FB2B72A27D007E9239 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1FE673052B72A27E007E9239 /* GeometryLinkTests */ = {
+			isa = PBXGroup;
+			children = (
+				1FE673062B72A27E007E9239 /* GeometryLinkTests.swift */,
+			);
+			path = GeometryLinkTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1FE672EA2B72A27C007E9239 /* GeometryLink */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FE6730A2B72A27E007E9239 /* Build configuration list for PBXNativeTarget "GeometryLink" */;
+			buildPhases = (
+				1FE672E72B72A27C007E9239 /* Sources */,
+				1FE672E82B72A27C007E9239 /* Frameworks */,
+				1FE672E92B72A27C007E9239 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GeometryLink;
+			packageProductDependencies = (
+				1FE672F02B72A27C007E9239 /* RealityKitContent */,
+			);
+			productName = GeometryLink;
+			productReference = 1FE672EB2B72A27C007E9239 /* GeometryLink.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1FE673012B72A27E007E9239 /* GeometryLinkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1FE6730D2B72A27E007E9239 /* Build configuration list for PBXNativeTarget "GeometryLinkTests" */;
+			buildPhases = (
+				1FE672FE2B72A27E007E9239 /* Sources */,
+				1FE672FF2B72A27E007E9239 /* Frameworks */,
+				1FE673002B72A27E007E9239 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1FE673042B72A27E007E9239 /* PBXTargetDependency */,
+			);
+			name = GeometryLinkTests;
+			productName = GeometryLinkTests;
+			productReference = 1FE673022B72A27E007E9239 /* GeometryLinkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1FE672E32B72A27C007E9239 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					1FE672EA2B72A27C007E9239 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					1FE673012B72A27E007E9239 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 1FE672EA2B72A27C007E9239;
+					};
+				};
+			};
+			buildConfigurationList = 1FE672E62B72A27C007E9239 /* Build configuration list for PBXProject "GeometryLink" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1FE672E22B72A27C007E9239;
+			productRefGroup = 1FE672EC2B72A27C007E9239 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1FE672EA2B72A27C007E9239 /* GeometryLink */,
+				1FE673012B72A27E007E9239 /* GeometryLinkTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1FE672E92B72A27C007E9239 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FE672FC2B72A27D007E9239 /* Preview Assets.xcassets in Resources */,
+				1FE672F92B72A27D007E9239 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FE673002B72A27E007E9239 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1FE672E72B72A27C007E9239 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FE672F52B72A27C007E9239 /* ContentView.swift in Sources */,
+				1FE672F32B72A27C007E9239 /* GeometryLinkApp.swift in Sources */,
+				1FE672F72B72A27C007E9239 /* ImmersiveView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FE672FE2B72A27E007E9239 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FE673072B72A27E007E9239 /* GeometryLinkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1FE673042B72A27E007E9239 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1FE672EA2B72A27C007E9239 /* GeometryLink */;
+			targetProxy = 1FE673032B72A27E007E9239 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1FE673082B72A27E007E9239 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = xros;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				XROS_DEPLOYMENT_TARGET = 1.0;
+			};
+			name = Debug;
+		};
+		1FE673092B72A27E007E9239 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = xros;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+				XROS_DEPLOYMENT_TARGET = 1.0;
+			};
+			name = Release;
+		};
+		1FE6730B2B72A27E007E9239 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GeometryLink/Preview Content\"";
+				DEVELOPMENT_TEAM = 2BQHEV6DNR;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.danilocampos.GeometryLink;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Debug;
+		};
+		1FE6730C2B72A27E007E9239 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GeometryLink/Preview Content\"";
+				DEVELOPMENT_TEAM = 2BQHEV6DNR;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.danilocampos.GeometryLink;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+			};
+			name = Release;
+		};
+		1FE6730E2B72A27E007E9239 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2BQHEV6DNR;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.danilocampos.GeometryLinkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GeometryLink.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GeometryLink";
+				XROS_DEPLOYMENT_TARGET = 1.0;
+			};
+			name = Debug;
+		};
+		1FE6730F2B72A27E007E9239 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2BQHEV6DNR;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.danilocampos.GeometryLinkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GeometryLink.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GeometryLink";
+				XROS_DEPLOYMENT_TARGET = 1.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1FE672E62B72A27C007E9239 /* Build configuration list for PBXProject "GeometryLink" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FE673082B72A27E007E9239 /* Debug */,
+				1FE673092B72A27E007E9239 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1FE6730A2B72A27E007E9239 /* Build configuration list for PBXNativeTarget "GeometryLink" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FE6730B2B72A27E007E9239 /* Debug */,
+				1FE6730C2B72A27E007E9239 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1FE6730D2B72A27E007E9239 /* Build configuration list for PBXNativeTarget "GeometryLinkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1FE6730E2B72A27E007E9239 /* Debug */,
+				1FE6730F2B72A27E007E9239 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1FE672F02B72A27C007E9239 /* RealityKitContent */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RealityKitContent;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 1FE672E32B72A27C007E9239 /* Project object */;
+}
