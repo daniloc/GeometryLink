@@ -6,9 +6,16 @@
 //
 
 import SwiftUI
+import RealityKitContent
 
 @main
 struct GeometryLinkApp: App {
+    
+    
+    init() {
+        RealityKitContent.InteractiveComponent.registerComponent()
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

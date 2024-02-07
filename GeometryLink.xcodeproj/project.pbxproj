@@ -14,6 +14,13 @@
 		1FE672F92B72A27D007E9239 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FE672F82B72A27D007E9239 /* Assets.xcassets */; };
 		1FE672FC2B72A27D007E9239 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FE672FB2B72A27D007E9239 /* Preview Assets.xcassets */; };
 		1FE673072B72A27E007E9239 /* GeometryLinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE673062B72A27E007E9239 /* GeometryLinkTests.swift */; };
+		1FE673112B72A46C007E9239 /* StreamingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE673102B72A46C007E9239 /* StreamingClient.swift */; };
+		1FE673132B72A4A6007E9239 /* StreamedContentAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE673122B72A4A6007E9239 /* StreamedContentAdapter.swift */; };
+		1FE673162B72CF2B007E9239 /* NIO in Frameworks */ = {isa = PBXBuildFile; productRef = 1FE673152B72CF2B007E9239 /* NIO */; };
+		1FE673182B72CF2B007E9239 /* NIOConcurrencyHelpers in Frameworks */ = {isa = PBXBuildFile; productRef = 1FE673172B72CF2B007E9239 /* NIOConcurrencyHelpers */; };
+		1FE6731A2B72CF2B007E9239 /* NIOCore in Frameworks */ = {isa = PBXBuildFile; productRef = 1FE673192B72CF2B007E9239 /* NIOCore */; };
+		1FE6731C2B72CF2B007E9239 /* NIOEmbedded in Frameworks */ = {isa = PBXBuildFile; productRef = 1FE6731B2B72CF2B007E9239 /* NIOEmbedded */; };
+		1FE6731E2B72CF2B007E9239 /* NIOFoundationCompat in Frameworks */ = {isa = PBXBuildFile; productRef = 1FE6731D2B72CF2B007E9239 /* NIOFoundationCompat */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +44,8 @@
 		1FE672FD2B72A27D007E9239 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FE673022B72A27E007E9239 /* GeometryLinkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeometryLinkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FE673062B72A27E007E9239 /* GeometryLinkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryLinkTests.swift; sourceTree = "<group>"; };
+		1FE673102B72A46C007E9239 /* StreamingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingClient.swift; sourceTree = "<group>"; };
+		1FE673122B72A4A6007E9239 /* StreamedContentAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamedContentAdapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,7 +53,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FE673182B72CF2B007E9239 /* NIOConcurrencyHelpers in Frameworks */,
 				1FE672F12B72A27C007E9239 /* RealityKitContent in Frameworks */,
+				1FE6731A2B72CF2B007E9239 /* NIOCore in Frameworks */,
+				1FE673162B72CF2B007E9239 /* NIO in Frameworks */,
+				1FE6731E2B72CF2B007E9239 /* NIOFoundationCompat in Frameworks */,
+				1FE6731C2B72CF2B007E9239 /* NIOEmbedded in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +100,8 @@
 				1FE672F82B72A27D007E9239 /* Assets.xcassets */,
 				1FE672FD2B72A27D007E9239 /* Info.plist */,
 				1FE672FA2B72A27D007E9239 /* Preview Content */,
+				1FE673102B72A46C007E9239 /* StreamingClient.swift */,
+				1FE673122B72A4A6007E9239 /* StreamedContentAdapter.swift */,
 			);
 			path = GeometryLink;
 			sourceTree = "<group>";
@@ -132,6 +148,11 @@
 			name = GeometryLink;
 			packageProductDependencies = (
 				1FE672F02B72A27C007E9239 /* RealityKitContent */,
+				1FE673152B72CF2B007E9239 /* NIO */,
+				1FE673172B72CF2B007E9239 /* NIOConcurrencyHelpers */,
+				1FE673192B72CF2B007E9239 /* NIOCore */,
+				1FE6731B2B72CF2B007E9239 /* NIOEmbedded */,
+				1FE6731D2B72CF2B007E9239 /* NIOFoundationCompat */,
 			);
 			productName = GeometryLink;
 			productReference = 1FE672EB2B72A27C007E9239 /* GeometryLink.app */;
@@ -183,6 +204,9 @@
 				Base,
 			);
 			mainGroup = 1FE672E22B72A27C007E9239;
+			packageReferences = (
+				1FE673142B72CF2B007E9239 /* XCRemoteSwiftPackageReference "swift-nio" */,
+			);
 			productRefGroup = 1FE672EC2B72A27C007E9239 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -218,6 +242,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FE672F52B72A27C007E9239 /* ContentView.swift in Sources */,
+				1FE673112B72A46C007E9239 /* StreamingClient.swift in Sources */,
+				1FE673132B72A4A6007E9239 /* StreamedContentAdapter.swift in Sources */,
 				1FE672F32B72A27C007E9239 /* GeometryLinkApp.swift in Sources */,
 				1FE672F72B72A27C007E9239 /* ImmersiveView.swift in Sources */,
 			);
@@ -373,6 +399,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Connect to blender";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -399,6 +426,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Connect to blender";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -487,10 +515,46 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		1FE673142B72CF2B007E9239 /* XCRemoteSwiftPackageReference "swift-nio" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-nio.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.63.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		1FE672F02B72A27C007E9239 /* RealityKitContent */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RealityKitContent;
+		};
+		1FE673152B72CF2B007E9239 /* NIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1FE673142B72CF2B007E9239 /* XCRemoteSwiftPackageReference "swift-nio" */;
+			productName = NIO;
+		};
+		1FE673172B72CF2B007E9239 /* NIOConcurrencyHelpers */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1FE673142B72CF2B007E9239 /* XCRemoteSwiftPackageReference "swift-nio" */;
+			productName = NIOConcurrencyHelpers;
+		};
+		1FE673192B72CF2B007E9239 /* NIOCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1FE673142B72CF2B007E9239 /* XCRemoteSwiftPackageReference "swift-nio" */;
+			productName = NIOCore;
+		};
+		1FE6731B2B72CF2B007E9239 /* NIOEmbedded */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1FE673142B72CF2B007E9239 /* XCRemoteSwiftPackageReference "swift-nio" */;
+			productName = NIOEmbedded;
+		};
+		1FE6731D2B72CF2B007E9239 /* NIOFoundationCompat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1FE673142B72CF2B007E9239 /* XCRemoteSwiftPackageReference "swift-nio" */;
+			productName = NIOFoundationCompat;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
