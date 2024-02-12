@@ -37,7 +37,7 @@ def start_bonjour_service(port):
     try:
         zeroconf.register_service(service_info)
         print(f"Registered Bonjour service: {service_name} on {server_name}.local.:{port}")
-        except Exception as e:
+    except Exception as e:
         print(f"Failed to register service: {e}")
 
 def stop_bonjour_service():
@@ -71,7 +71,7 @@ async def broadcast_geometry_update_async(geometry_json):
     print(f"Attempting geometry update to {len(clients)} clients")
     if clients:  # Check if there are any clients connected
         print(f"Broadcasting geometry update {geometry_json} to {len(clients)} clients")
-        await asyncio.wait([client.send(geometry_json) for client in clients])
+    await asyncio.wait([client.send(geometry_json) for client in clients])
 
 def start_server():
     print("Starting WebSocket server")
@@ -90,8 +90,6 @@ def start_server():
 
         try:
             loop.run_forever()
-        except KeyboardInterrupt:
-            pass
         finally:
             loop.run_until_complete(stop_server())
             loop.close()
@@ -110,13 +108,23 @@ async def stop_server_coroutine():
     server.close()
     await server.wait_closed()
 
-    # Attempt to close all client connections
+    # Close all client connections
     for websocket in clients:
         await websocket.close(reason='Server shutdown')
     clients.clear()
 
+    # Cancel all pending tasks
+    pending = asyncio.all_tasks(loop)
+    for task in pending:
+        task.cancel()
+        try:
+            await task  # Wait for the task cancellation to complete
+        except asyncio.CancelledError:
+            pass  # Task cancellation is expected
+
     # Stop the event loop
     loop.stop()
+
 
 def broadcast_geometry_update(geometry_json):
     print("checking for active loop for broadcast")
