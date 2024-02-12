@@ -64,19 +64,22 @@ import Foundation
             print("Stream opened")
         case .hasBytesAvailable:
             if aStream == inputStream {
-                var dataBuffer = Array<UInt8>(repeating: 0, count: 1024 * 16)
-                var len: Int
-                while (inputStream?.hasBytesAvailable)! {
-                    len = (inputStream?.read(&dataBuffer, maxLength: 1024 * 16))!
-                    if len > 0 {
-                        let output = String(bytes: dataBuffer, encoding: .ascii)
-                        if let output {
-                            print("server said: \(output)")
-                            
-                            DispatchQueue.main.async {
-                                self.entity = self.convertGeometry(from: output.trimmingCharacters(in: CharacterSet(charactersIn: "\0")))
-                            }
-                        }
+                var buffer = Array<UInt8>(repeating: 0, count: 1024 * 16) // Buffer size
+                var totalData = Data() // Temporary storage for accumulated data
+
+                while inputStream?.hasBytesAvailable ?? false {
+                    let bytesRead = inputStream?.read(&buffer, maxLength: buffer.count) ?? 0
+                    if bytesRead > 0 {
+                        totalData.append(contentsOf: buffer[0..<bytesRead]) // Append new data
+                    }
+                }
+
+                if totalData.count > 0, let output = String(data: totalData, encoding: .utf8) {
+                    print("server said: \(output)")
+
+                    DispatchQueue.main.async {
+                        // Assuming convertGeometry(from:) is a method that processes the complete message
+                        self.entity = self.convertGeometry(from: output.trimmingCharacters(in: CharacterSet(charactersIn: "\0")))
                     }
                 }
             }
@@ -92,6 +95,7 @@ import Foundation
             print("Unknown event")
         }
     }
+
 
     func send(message: String){
 

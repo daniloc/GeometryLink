@@ -17,6 +17,7 @@ struct ContentView: View {
     
     @State var client = WebSocketClient(url: URL(string: "10.0.1.247")!, port: 8765)
     @State var oldEntity: Entity?
+    @State var anchor: Entity?
     
     @Environment(\.openImmersiveSpace) var openImmersiveSpace
     @Environment(\.dismissImmersiveSpace) var dismissImmersiveSpace
@@ -26,18 +27,17 @@ struct ContentView: View {
         VStack {
             RealityView { content in
                 // Add the initial RealityKit content
-                if let entity = client.entity {
-                    content.add(entity)
+                if let anchorScene = try? await Entity(named: "Anchor", in: realityKitContentBundle) {
+                    content.add(anchorScene)
+                    self.anchor = anchorScene.findEntity(named: "InteractionAnchor")
                 }
             } update: { content in
 
-                content.entities.removeAll()
-
                 if let entity = client.entity, entity.parent == nil {
-                    content.add(entity)
+                    entity.setParent(self.anchor)
+                    entity.setPosition([0,0,0], relativeTo: self.anchor)
+                    entity.setScale([0.1,0.1,0.1], relativeTo: self.anchor)
                 }
-                
-
             }
             .installGestures()
             
@@ -55,32 +55,8 @@ struct ContentView: View {
             .glassBackgroundEffect()
 
         }
-        .onChange(of: showImmersiveSpace) { _, newValue in
-            Task {
-                if newValue {
-                    switch await openImmersiveSpace(id: "ImmersiveSpace") {
-                    case .opened:
-                        immersiveSpaceIsShown = true
-                    case .error, .userCancelled:
-                        fallthrough
-                    @unknown default:
-                        immersiveSpaceIsShown = false
-                        showImmersiveSpace = false
-                    }
-                } else if immersiveSpaceIsShown {
-                    await dismissImmersiveSpace()
-                    immersiveSpaceIsShown = false
-                }
-            }
-        }
         .onChange(of: self.client.entity, { oldValue, newValue in
-            oldEntity?.removeFromParent()
-            
-            let component = InteractiveComponent()
-            newValue?.components.set(component)
-            newValue?.components.set(InputTargetComponent(allowedInputTypes: .all))
-            newValue?.components.set(CollisionComponent(shapes: [.generateBox(size: [1,1,1])]))
-            
+            oldValue?.removeFromParent()
         })
         .onAppear {
             client.connect()

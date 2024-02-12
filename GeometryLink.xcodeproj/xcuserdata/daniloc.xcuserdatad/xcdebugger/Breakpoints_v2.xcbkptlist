@@ -7,17 +7,113 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A4130798-B1D4-4447-AAE3-CAC82D2C7E8A"
+            uuid = "27EE1CC0-47D6-42F2-BF21-DA4853AFF06C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GeometryLink/StreamedContentAdapter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "convertGeometry(from:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "27EE1CC0-47D6-42F2-BF21-DA4853AFF06C - a2fc3d1c2203c7f9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GeometryLink.WebSocketClient.convertGeometry(from: Swift.String) -&gt; Swift.Optional&lt;RealityKit.Entity&gt;"
+                  moduleName = "GeometryLink"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daniloc/Documents/Development/GeometryLink/GeometryLink/StreamedContentAdapter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "264">
+               </Location>
+               <Location
+                  uuid = "27EE1CC0-47D6-42F2-BF21-DA4853AFF06C - 8d6a2aea4488486e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GeometryLink.WebSocketClient.createMDLMesh(from: GeometryLink.GeometryData) -&gt; Swift.Optional&lt;__C.MDLMesh&gt;"
+                  moduleName = "GeometryLink"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daniloc/Documents/Development/GeometryLink/GeometryLink/StreamedContentAdapter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "2264">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C8ADE1B6-CCA9-4E69-AF95-12BD738304C6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GeometryLink/StreamedContentAdapter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "convertGeometry(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "829A426E-1B7A-4D3D-B7D6-7EF5FC3FCCBD"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GeometryLink/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "body"
             landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "829A426E-1B7A-4D3D-B7D6-7EF5FC3FCCBD - 118b0ead6bf396ab"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Swift.MainActor @Sendable (inout _RealityKit_SwiftUI.RealityViewContent) async -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of _RealityKit_SwiftUI.RealityView.installGestures() -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.glassBackgroundEffect(displayMode: SwiftUI.GlassBackgroundDisplayMode) -&gt; some&gt;&gt;.0)&gt; in GeometryLink.ContentView.body.getter : some"
+                  moduleName = "GeometryLink"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daniloc/Documents/Development/GeometryLink/GeometryLink/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "304">
+               </Location>
+               <Location
+                  uuid = "829A426E-1B7A-4D3D-B7D6-7EF5FC3FCCBD - a4a66350d7c7b0ac"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for closure #1 @Swift.MainActor @Sendable (inout _RealityKit_SwiftUI.RealityViewContent) async -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of _RealityKit_SwiftUI.RealityView.installGestures() -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.glassBackgroundEffect(displayMode: SwiftUI.GlassBackgroundDisplayMode) -&gt; some&gt;&gt;.0)&gt; in GeometryLink.ContentView.body.getter : some"
+                  moduleName = "GeometryLink"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daniloc/Documents/Development/GeometryLink/GeometryLink/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "312">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
