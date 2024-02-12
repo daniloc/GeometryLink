@@ -1,4 +1,10 @@
-# Prototype: Sync Blender to Vision Pro with gesture handling
+# Prototype: Sync Blender mesh to Vision Pro with gesture handling
+
+
+
+https://github.com/daniloc/GeometryLink/assets/213358/702011d1-5c38-4697-8b04-843f1576f416
+
+
 
 This project uses WebSockets to transmit the selected mesh in Blender to Vision Pro, with interactive gestures.
 
