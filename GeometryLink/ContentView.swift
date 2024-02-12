@@ -15,13 +15,16 @@ struct ContentView: View {
     @State private var showImmersiveSpace = false
     @State private var immersiveSpaceIsShown = false
     
-    @State var client = WebSocketClient(url: URL(string: "ws://10.0.1.247:8765")!)
+    @State var client = WebSocketClient()
     @State var oldEntity: Entity?
     @State var anchor: Entity?
 
     @Environment(\.openImmersiveSpace) var openImmersiveSpace
     @Environment(\.dismissImmersiveSpace) var dismissImmersiveSpace
     
+    func connect() {
+        client.connectDirectly(to: "Danilo-MBA.local", port: 8765)
+    }
 
     var body: some View {
         VStack {
@@ -44,7 +47,7 @@ struct ContentView: View {
             
             VStack (spacing: 12) {
                 Button {
-                    client.connect()
+                    connect()
                 } label: {
                     Text("Reconnect")
                 }
@@ -60,7 +63,7 @@ struct ContentView: View {
             oldValue?.removeFromParent()
         })
         .onAppear {
-            client.connect()
+            connect()
         }
     }
 }

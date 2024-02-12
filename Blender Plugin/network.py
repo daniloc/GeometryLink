@@ -1,7 +1,8 @@
 import asyncio
 import websockets
-import json
 import threading
+from zeroconf import Zeroconf, ServiceInfo
+import socket
 
 # A set of connected WebSocket clients
 clients = set()
@@ -10,6 +11,41 @@ clients = set()
 server = None
 # Event loop for the server
 loop = None
+
+zeroconf = None
+service_info = None
+
+def start_bonjour_service(port):
+    global zeroconf, service_info
+    zeroconf = Zeroconf()
+    service_type = "_http._tcp.local."  # Change the service type if necessary
+    service_name = "BlenderGeometryLink._http._tcp.local."  # Customize your service name
+    server_name = socket.gethostname()  # Get the server's hostname
+
+    # Get the local IP address
+    local_ip = socket.inet_aton(socket.gethostbyname(server_name))
+    
+    service_info = ServiceInfo(
+        service_type,
+        service_name,
+        addresses=[local_ip],
+        port=port,
+        properties={},  # Add any additional properties if needed
+        server=server_name
+    )
+
+    try:
+        zeroconf.register_service(service_info)
+        print(f"Registered Bonjour service: {service_name} on {server_name}.local.:{port}")
+        except Exception as e:
+        print(f"Failed to register service: {e}")
+
+def stop_bonjour_service():
+    global zeroconf, service_info
+    if zeroconf and service_info:
+        zeroconf.unregister_service(service_info)
+        zeroconf.close()
+        print("Unregistered Bonjour service and closed Zeroconf")
 
 async def register_client(websocket):
     print("Client connected")
@@ -49,6 +85,9 @@ def start_server():
         start_server_coro = websockets.serve(handle_client, '0.0.0.0', 8765, reuse_port=True)
         server = loop.run_until_complete(start_server_coro)
 
+        # Start Bonjour service
+        start_bonjour_service(8765)
+
         try:
             loop.run_forever()
         except KeyboardInterrupt:
@@ -61,6 +100,8 @@ def start_server():
     threading.Thread(target=run_event_loop).start()
 
 def stop_server():
+    stop_bonjour_service()
+    
     if loop is not None and server is not None:
         asyncio.run_coroutine_threadsafe(stop_server_coroutine(), loop)
 

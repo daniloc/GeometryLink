@@ -1,6 +1,4 @@
-import sys
 import os
-import bmesh
 
 bl_info = {
     "name": "Geometry Link",
@@ -12,16 +10,12 @@ bl_info = {
 }
 
 import bpy
-import json
 from bpy.app.handlers import depsgraph_update_post
 import network
 
-import json
-import bmesh
-
 import os
-import tempfile
 import base64
+import threading
 
 is_updating = False
 
@@ -29,8 +23,6 @@ def serialize_geometry(obj):
     # Ensure the object is a mesh
     if obj.type != 'MESH':
         return None
-    
-    
 
     # Use Blender's temporary directory to store the temporary file
     temp_dir = bpy.app.tempdir
@@ -72,10 +64,15 @@ def geometry_update_handler(scene):
         # Release the lock
         is_updating = False
 
+def delayed_start():
+    depsgraph_update_post.append(geometry_update_handler)
+    network.start_server()
+    print("Server started")
+    return None  # Returning None removes the timer
+
 def register():
     print("Registering")
-    depsgraph_update_post.append(geometry_update_handler)
-    network.start_server()  # Start the TCP server
+    bpy.app.timers.register(delayed_start, first_interval=5.0)  # Delay server start
 
 def unregister():
     print("Unregistering")

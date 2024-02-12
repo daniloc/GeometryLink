@@ -78,8 +78,8 @@
             filePath = "GeometryLink/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
@@ -112,6 +112,54 @@
                   startingLineNumber = "32"
                   endingLineNumber = "32"
                   offsetFromSymbolStart = "312">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0B0D542C-64F6-4DFF-99D8-C2634600A54F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GeometryLink/StreamingClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "startDiscovery()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0B0D542C-64F6-4DFF-99D8-C2634600A54F - dd6849050b437b8d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Set&lt;Network.NWBrowser.Result&gt;, Swift.Set&lt;Network.NWBrowser.Result.Change&gt;) -&gt; () in GeometryLink.WebSocketClient.startDiscovery() -&gt; ()"
+                  moduleName = "GeometryLink"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daniloc/Documents/Development/GeometryLink/GeometryLink/StreamingClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "576">
+               </Location>
+               <Location
+                  uuid = "0B0D542C-64F6-4DFF-99D8-C2634600A54F - dd6849050b437b8d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Set&lt;Network.NWBrowser.Result&gt;, Swift.Set&lt;Network.NWBrowser.Result.Change&gt;) -&gt; () in GeometryLink.WebSocketClient.startDiscovery() -&gt; ()"
+                  moduleName = "GeometryLink"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/daniloc/Documents/Development/GeometryLink/GeometryLink/StreamingClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "752">
                </Location>
             </Locations>
          </BreakpointContent>
