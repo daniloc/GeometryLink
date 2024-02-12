@@ -51,7 +51,7 @@ extension WebSocketClient {
     func convertGeometry(from jsonString: String) -> Entity? {
         if
             let geometryDataURL = deserializeGeometryData(from: jsonString),
-            var entity = loadEntityFromUSDZ(url: geometryDataURL),
+            let entity = loadEntityFromUSDZ(url: geometryDataURL),
             let child = entity.children.first
         {
             

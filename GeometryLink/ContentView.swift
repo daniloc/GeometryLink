@@ -43,11 +43,12 @@ struct ContentView: View {
             
             
             VStack (spacing: 12) {
-                Toggle("Enlarge RealityView Content", isOn: $enlarge)
-                    .font(.title)
+                Button {
+                    client.connect()
+                } label: {
+                    Text("Reconnect")
+                }
 
-                Toggle("Show ImmersiveSpace", isOn: $showImmersiveSpace)
-                    .font(.title)
             }
             
             .frame(width: 360)
