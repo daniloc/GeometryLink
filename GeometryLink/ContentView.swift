@@ -15,10 +15,10 @@ struct ContentView: View {
     @State private var showImmersiveSpace = false
     @State private var immersiveSpaceIsShown = false
     
-    @State var client = WebSocketClient(url: URL(string: "10.0.1.247")!, port: 8765)
+    @State var client = WebSocketClient(url: URL(string: "ws://10.0.1.247:8765")!)
     @State var oldEntity: Entity?
     @State var anchor: Entity?
-    
+
     @Environment(\.openImmersiveSpace) var openImmersiveSpace
     @Environment(\.dismissImmersiveSpace) var dismissImmersiveSpace
     

@@ -11,100 +11,60 @@ import RealityKit
 import Foundation
 
 
-@Observable class WebSocketClient: NSObject, StreamDelegate {
+@Observable class WebSocketClient: NSObject, URLSessionDelegate {
     
-    var readStream: Unmanaged<CFReadStream>?
-    var writeStream: Unmanaged<CFWriteStream>?
-    var inputStream: InputStream?
-    var outputStream: OutputStream?
-    private var url: URL;
-    private var port: UInt32;
+    private var webSocketTask: URLSessionWebSocketTask?
+    private var url: URL
 
-    init(url: URL, port: UInt32) {
-        self.url = url;
-        self.port = port;
+    init(url: URL) {
+        self.url = url
     }
     
     var entity: Entity?
 
     func connect() {
-        CFStreamCreatePairWithSocketToHost(kCFAllocatorDefault, (url.absoluteString as CFString), port, &readStream, &writeStream);
-        print("Opening streams.")
-        outputStream = writeStream?.takeRetainedValue()
-        inputStream = readStream?.takeRetainedValue()
-        outputStream?.delegate = self;
-        inputStream?.delegate = self;
-        outputStream?.schedule(in: RunLoop.current, forMode: RunLoop.Mode.default);
-        inputStream?.schedule(in: RunLoop.current, forMode: RunLoop.Mode.default);
-        outputStream?.open();
-        inputStream?.open();
+        let session = URLSession(configuration: .default, delegate: self, delegateQueue: OperationQueue())
+        webSocketTask = session.webSocketTask(with: url)
+        print("Connecting to WebSocket.")
+        webSocketTask?.resume()
+
+        receiveMessage()
     }
     
-    func disconnect(){
-        print("Closing streams.");
-        inputStream?.close();
-        outputStream?.close();
-        inputStream?.remove(from: RunLoop.current, forMode: RunLoop.Mode.default);
-        outputStream?.remove(from: RunLoop.current, forMode: RunLoop.Mode.default);
-        inputStream?.delegate = nil;
-        outputStream?.delegate = nil;
-        inputStream = nil;
-        outputStream = nil;
+    func disconnect() {
+        print("Disconnecting WebSocket.")
+        webSocketTask?.cancel(with: .goingAway, reason: nil)
     }
 
-
-    func handleMessage(_ message: String) {
-        entity = convertGeometry(from: message)
-    }
-
-    func stream(_ aStream: Stream, handle eventCode: Stream.Event) {
-        print("stream event \(eventCode)")
-        switch eventCode {
-        case .openCompleted:
-            print("Stream opened")
-        case .hasBytesAvailable:
-            if aStream == inputStream {
-                var buffer = Array<UInt8>(repeating: 0, count: 1024 * 16) // Buffer size
-                var totalData = Data() // Temporary storage for accumulated data
-
-                while inputStream?.hasBytesAvailable ?? false {
-                    let bytesRead = inputStream?.read(&buffer, maxLength: buffer.count) ?? 0
-                    if bytesRead > 0 {
-                        totalData.append(contentsOf: buffer[0..<bytesRead]) // Append new data
-                    }
-                }
-
-                if totalData.count > 0, let output = String(data: totalData, encoding: .utf8) {
-                    print("server said: \(output)")
-
+    private func receiveMessage() {
+        webSocketTask?.receive { [weak self] result in
+            switch result {
+            case .failure(let error):
+                print("Error in receiving message: \(error)")
+            case .success(let message):
+                switch message {
+                case .string(let text):
+                    print("Received string: \(text)")
                     DispatchQueue.main.async {
                         // Assuming convertGeometry(from:) is a method that processes the complete message
-                        self.entity = self.convertGeometry(from: output.trimmingCharacters(in: CharacterSet(charactersIn: "\0")))
+                        self?.entity = self?.convertGeometry(from: text)
                     }
+                    self?.receiveMessage() // Listen for the next message
+                case .data(let data):
+                    print("Received data: \(data)")
+                    self?.receiveMessage() // Listen for the next message
+                @unknown default:
+                    fatalError()
                 }
             }
-        case .hasSpaceAvailable:
-            print("Stream has space available now")
-        case .errorOccurred:
-            print("\(aStream.streamError?.localizedDescription ?? "")")
-        case .endEncountered:
-            aStream.close()
-            aStream.remove(from: RunLoop.current, forMode: RunLoop.Mode.default)
-            print("close stream")
-        default:
-            print("Unknown event")
         }
     }
 
-
-    func send(message: String){
-
-        let response = "msg:\(message)"
-        let buff = [UInt8](message.utf8)
-        if let _ = response.data(using: .ascii) {
-            outputStream?.write(buff, maxLength: buff.count)
+    func send(message: String) {
+        webSocketTask?.send(.string(message)) { error in
+            if let error = error {
+                print("Error in sending message: \(error)")
+            }
         }
-
     }
-
 }
