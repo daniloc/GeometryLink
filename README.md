@@ -6,8 +6,8 @@ This project uses WebSockets to transmit the selected mesh in Blender to Vision 
 
 - Install `Blender Plugin.zip` as an add-on in Blender
 - Edit `connect()` in ContentView.swift with the hostname of the machine running Blender
-- Build + run to Simulator or a Vision Pro device
-- Select a mesh. It should appear in the Vision Pro volume. You can grab and scale it with your hands.
+- Build/Run to Simulator or a Vision Pro device
+- Select a mesh in Blender. It should appear in the Vision Pro volume. You can grab and scale it with your hands.
 
 ## ⚠️☣️ The python code is bad!
 
