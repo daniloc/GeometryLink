@@ -16,8 +16,7 @@ struct ContentView: View {
     @State private var immersiveSpaceIsShown = false
     
     @State var client = WebSocketClient()
-    @State var oldEntity: Entity?
-    @State var anchor: Entity?
+    @State var gestureContainer: Entity?
 
     @Environment(\.openImmersiveSpace) var openImmersiveSpace
     @Environment(\.dismissImmersiveSpace) var dismissImmersiveSpace
@@ -32,14 +31,14 @@ struct ContentView: View {
                 // Add the initial RealityKit content
                 if let anchorScene = try? await Entity(named: "Anchor", in: realityKitContentBundle) {
                     content.add(anchorScene)
-                    self.anchor = anchorScene.findEntity(named: "InteractionAnchor")
+                    self.gestureContainer = anchorScene.findEntity(named: "InteractionAnchor")
                 }
             } update: { content in
 
                 if let entity = client.entity, entity.parent == nil {
-                    entity.setParent(self.anchor)
-                    entity.setPosition([0,0,0], relativeTo: self.anchor)
-                    entity.setScale([0.1,0.1,0.1], relativeTo: self.anchor)
+                    entity.setParent(self.gestureContainer)
+                    entity.setPosition([0,0,0], relativeTo: self.gestureContainer)
+                    entity.setScale([0.1,0.1,0.1], relativeTo: self.gestureContainer)
                 }
             }
             .installGestures()
