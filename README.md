@@ -21,7 +21,7 @@ I've shipped almost no python in my life. The add-in is the product of extended 
 
 **Do not reuse the python code**. Feel free to open a PR with replacement, non-toxic python code.
 
-## Pipline
+## Pipeline
 
 ### Server
 - Mesh is selected in Blender
